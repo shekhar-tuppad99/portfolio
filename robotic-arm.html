@@ -1,13 +1,382 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Automated Material Handling Robotic Arm | Shekhar Tuppad</title><link rel="stylesheet" href="css/style.css"></head><body>
-<header class="header"><nav class="nav container"><a class="logo" href="index.html">ST</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="nav-links">
-<a href="index.html">Home</a><a href="about.html">About Me</a><a href="skills.html">Skills</a><a class="active" href="projects.html">Selected Projects</a><a href="education.html">Education</a><a href="achievements.html">Achievements</a><a href="contact.html">Contact</a>
-</div></nav></header>
-<main><section class="page-hero container"><p class="eyebrow">PROJECT 02</p><h1>Automated Material Handling Robotic Arm</h1><p class="wide-text">An automated robotic arm designed to pick, move, and place materials between designated locations, demonstrating robotic control, motor actuation, sensing, and automation.</p></section>
-<section class="section container detail">
-<div class="project-hero-image">Project image can be added here</div>
-<h2>Overview</h2><p>An automated robotic arm designed to pick, move, and place materials between designated locations, demonstrating robotic control, motor actuation, sensing, and automation.</p>
-<h2>Procedure</h2><p>The robotic arm is controlled to perform a sequence of material-handling movements. The system coordinates the arm's joints and actuators so that it can reach a designated position, pick up a material, move it to another location, and release it. The process demonstrates coordinated motion, control, and automated handling.</p>
-<div class="info-list"><div><strong>Focus</strong>Robotics and automation</div><div><strong>System</strong>Material handling</div><div><strong>Practical Experience</strong>Prototype development and hardware integration</div></div>
-<a class="back" href="projects.html">← Back to Selected Projects</a></section></main>
-<footer><div class="container footer"><strong>ST</strong><span>© 2026 Shekhar Tuppad</span></div></footer><script>const b=document.querySelector(".menu-toggle"),n=document.querySelector(".nav-links");if(b){b.addEventListener("click",()=>{const o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);});n.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>n.classList.remove("open")));}</script></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automated Material Handling Robotic Arm | Shekhar Tuppad</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .robot-project {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .robot-project h2 {
+            margin-top: 45px;
+            margin-bottom: 15px;
+        }
+
+        .robot-project p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .robot-main-image {
+            width: 100%;
+            margin: 25px 0 35px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #f7f7f7;
+        }
+
+        .robot-main-image img {
+            display: block;
+            width: 100%;
+            max-height: 550px;
+            object-fit: contain;
+        }
+
+        .robot-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin: 25px 0;
+        }
+
+        .robot-gallery figure {
+            margin: 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .robot-gallery img {
+            display: block;
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
+            background: #f7f7f7;
+        }
+
+        .robot-gallery figcaption {
+            padding: 12px;
+            color: #555;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .robot-video {
+            margin: 25px 0 35px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f7f7f7;
+        }
+
+        .robot-video video {
+            display: block;
+            width: 100%;
+            max-height: 550px;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        .robot-components {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .robot-component {
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .robot-component strong {
+            display: block;
+            margin-bottom: 7px;
+            color: #1769d1;
+        }
+
+        .robot-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 35px;
+            padding: 25px 0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .robot-info strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #1769d1;
+        }
+
+        .robot-note {
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 4px solid #1769d1;
+            background: #f5f8ff;
+        }
+
+        @media(max-width: 650px) {
+            .robot-gallery,
+            .robot-components,
+            .robot-info {
+                grid-template-columns: 1fr;
+            }
+
+            .robot-gallery img {
+                height: auto;
+                max-height: 420px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="nav container">
+        <a class="logo" href="index.html">ST</a>
+
+        <button class="menu-toggle"
+                aria-label="Open navigation"
+                aria-expanded="false">☰</button>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="skills.html">Skills</a>
+            <a class="active" href="projects.html">Selected Projects</a>
+            <a href="education.html">Education</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-hero container">
+        <p class="eyebrow">PROJECT 02</p>
+
+        <h1>Automated Material Handling Robotic Arm</h1>
+
+        <p class="wide-text">
+            A robotic arm prototype developed to demonstrate controlled
+            movement, object handling and automation using electronic
+            control and servo-based actuation.
+        </p>
+    </section>
+
+    <section class="section container robot-project">
+
+        <!-- MAIN PROJECT IMAGE -->
+        <div class="robot-main-image">
+            <img src="images/robotic-arm.jpg"
+                 alt="Automated material handling robotic arm prototype">
+        </div>
+
+        <h2>Project Overview</h2>
+
+        <p>
+            The Automated Material Handling Robotic Arm is a practical
+            engineering project developed to demonstrate the basic
+            concepts of robotics and automation. The prototype uses
+            controlled joint movements to position its arm and operate
+            a gripper for handling objects.
+        </p>
+
+        <p>
+            The project combines mechanical assembly, electronic
+            interfacing and programming. It provides practical
+            experience in controlling multiple movements and
+            understanding how robotic systems can be used in
+            material-handling applications.
+        </p>
+
+        <h2>Project Objectives</h2>
+
+        <ul>
+            <li>Develop a working robotic arm prototype.</li>
+            <li>Demonstrate controlled movement of multiple joints.</li>
+            <li>Explore servo motor actuation and electronic control.</li>
+            <li>Demonstrate basic gripping and object-handling operations.</li>
+            <li>Understand practical applications of robotics and automation.</li>
+        </ul>
+
+        <h2>Working Principle</h2>
+
+        <p>
+            The robotic arm operates through coordinated movements of
+            its base, shoulder and elbow joints. Servo motors provide
+            the required angular movement, while the gripper performs
+            the gripping and releasing operation.
+        </p>
+
+        <p>
+            A Bluetooth control interface allows the operator to adjust
+            the joint positions through a control panel. By changing
+            the joint positions and operating the gripper, the arm can
+            be positioned to demonstrate material-handling movements.
+        </p>
+
+        <h2>Hardware and Components</h2>
+
+        <div class="robot-components">
+
+            <div class="robot-component">
+                <strong>ESP32 Controller</strong>
+                Used as the main controller for processing commands
+                and controlling the robotic arm.
+            </div>
+
+            <div class="robot-component">
+                <strong>Servo Motors</strong>
+                Used to produce controlled angular movements of the
+                robotic arm joints.
+            </div>
+
+            <div class="robot-component">
+                <strong>Mechanical Arm Structure</strong>
+                Provides the physical framework for the base,
+                shoulder, elbow and gripper.
+            </div>
+
+            <div class="robot-component">
+                <strong>Bluetooth Control Interface</strong>
+                Provides a wireless interface for adjusting arm
+                movements and operating the gripper.
+            </div>
+
+        </div>
+
+        <h2>Robotic Arm and Control Interface</h2>
+
+        <p>
+            The following photographs show the developed robotic arm
+            and its mobile Bluetooth control interface.
+        </p>
+
+        <div class="robot-gallery">
+
+            <figure>
+                <img src="images/robotic-arm.jpg"
+                     alt="Robotic arm prototype">
+                <figcaption>Developed Robotic Arm Prototype</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/robo-arm-app.jpeg"
+                     alt="MK2 Robo Arm Bluetooth control panel">
+                <figcaption>MK2 Robo Arm – Bluetooth Control Panel</figcaption>
+            </figure>
+
+        </div>
+
+        <h2>Project Video Demonstration</h2>
+
+        <p>
+            Watch the project demonstration to see the robotic
+            writing machine in operation.
+        </p>
+
+        <div class="robot-video">
+
+            <video controls preload="metadata">
+                <source src="videos/writing-machine-demo.mp4"
+                        type="video/mp4">
+
+                Your browser does not support HTML video.
+            </video>
+
+        </div>
+
+        <h2>Learning Outcomes</h2>
+
+        <p>
+            This project provided practical exposure to robotic
+            mechanisms, servo motor control, microcontroller
+            interfacing, wireless communication and prototype
+            development. It also helped develop troubleshooting,
+            testing and hardware integration skills.
+        </p>
+
+        <div class="robot-note">
+            <strong>Project Focus</strong>
+            <p>
+                Practical implementation of robotics, embedded
+                control, mechanical assembly and automation concepts.
+            </p>
+        </div>
+
+        <div class="robot-info">
+
+            <div>
+                <strong>Project Category</strong>
+                Robotics and Automation
+            </div>
+
+            <div>
+                <strong>Controller</strong>
+                ESP32
+            </div>
+
+            <div>
+                <strong>Control Method</strong>
+                Bluetooth Interface
+            </div>
+
+            <div>
+                <strong>Project Number</strong>
+                Project 02
+            </div>
+
+        </div>
+
+        <a class="back" href="projects.html">
+            ← Back to Selected Projects
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer">
+        <strong>ST</strong>
+        <span>© 2026 Shekhar Tuppad</span>
+    </div>
+</footer>
+
+<script>
+const b = document.querySelector(".menu-toggle");
+const n = document.querySelector(".nav-links");
+
+if (b) {
+    b.addEventListener("click", () => {
+        const o = n.classList.toggle("open");
+        b.setAttribute("aria-expanded", o);
+    });
+
+    n.querySelectorAll("a").forEach(a =>
+        a.addEventListener("click", () => n.classList.remove("open"))
+    );
+}
+</script>
+
+</body>
+</html>
